@@ -1,9 +1,24 @@
-import { ArrowRight, Sparkles, Code2, Users, Rocket, GraduationCap, Layers, Compass } from "lucide-react";
+import { ArrowRight, Sparkles, Code2, Users, Rocket, GraduationCap, Layers, Compass, MessageCircle, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import heroImg from "@/assets/hero-kinetic.jpg";
+
+const WHATSAPP_PHONE = "5521995403334";
+const INSTAGRAM_USERNAME = "seu.nicolau";
+const PARTICIPAR_MENSAGEM =
+  "Oi! Quero participar da Lunico e saber como funciona o proximo cohort.";
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(PARTICIPAR_MENSAGEM)}`;
+const INSTAGRAM_DM_LINK = `https://ig.me/m/${INSTAGRAM_USERNAME}`;
 
 const stats = [
   { value: "14", label: "Sprints ativos" },
@@ -215,9 +230,39 @@ const Index = () => {
               pra entender o que te move.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" variant="secondary" className="font-semibold uppercase tracking-wide text-xs">
-                Quero participar <ArrowRight className="ml-2 size-4" />
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button size="lg" variant="secondary" className="font-semibold uppercase tracking-wide text-xs">
+                    Quero participar <ArrowRight className="ml-2 size-4" />
+                  </Button>
+                </DialogTrigger>
+
+                <DialogContent className="sm:max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>Como voce prefere falar com a Lunico?</DialogTitle>
+                    <DialogDescription>
+                      Escolha um canal para iniciar a conversa agora.
+                    </DialogDescription>
+                  </DialogHeader>
+
+                  <div className="grid gap-3">
+                    <Button asChild className="justify-start gap-2">
+                      <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                        <MessageCircle className="size-4" />
+                        Abrir WhatsApp
+                      </a>
+                    </Button>
+
+                    <Button asChild variant="outline" className="justify-start gap-2">
+                      <a href={INSTAGRAM_DM_LINK} target="_blank" rel="noreferrer">
+                        <Instagram className="size-4" />
+                        Enviar direct no Instagram
+                      </a>
+                    </Button>
+                  </div>
+                </DialogContent>
+              </Dialog>
+
               <Button size="lg" variant="outline" asChild className="bg-transparent border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground font-semibold uppercase tracking-wide text-xs">
                 <Link to="/projetos">Ver o que já construímos</Link>
               </Button>
