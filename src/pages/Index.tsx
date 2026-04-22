@@ -21,9 +21,9 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent
 const INSTAGRAM_DM_LINK = `https://ig.me/m/${INSTAGRAM_USERNAME}`;
 
 const stats = [
-  { value: "14", label: "Sprints ativos" },
-  { value: "28", label: "Estudantes" },
-  { value: "09", label: "Soluções no ar" },
+  { value: "02", label: "Sprints ativos" },
+  { value: "03", label: "Estudantes" },
+  { value: "02", label: "Soluções no ar" },
 ];
 
 const pillars = [
