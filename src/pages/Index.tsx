@@ -112,15 +112,6 @@ const Index = () => {
                 className="w-full h-full object-cover animate-float"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 glass-panel p-4 rounded-2xl shadow-soft max-w-[220px]">
-              <div className="flex items-center gap-3">
-                <div className="size-10 rounded-full bg-primary grid place-items-center text-primary-foreground font-display font-bold">L</div>
-                <div>
-                  <p className="text-xs font-bold">Próximo workshop</p>
-                  <p className="text-[10px] text-muted-foreground">React Patterns · 24/10</p>
-                </div>
-              </div>
-            </div>
             <div className="absolute -top-4 -right-4 size-16 bg-brand-green rounded-2xl rotate-12 shadow-tech grid place-items-center" aria-hidden>
               <Sparkles className="size-7 text-brand-green-foreground" />
             </div>
